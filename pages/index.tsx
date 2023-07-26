@@ -2,7 +2,7 @@ import { PokemonListResponse, SmallPokemon } from '../interfaces';
 import { pokeApi } from '../api';
 import { Layout } from '../components/layouts';
 import { GetStaticProps, NextPage } from 'next'
-import { Card, Grid, Row, Text } from '@nextui-org/react';
+import { Grid } from '@nextui-org/react';
 import { PokemonCard } from '@/components/pokemon';
 
 interface Props{
