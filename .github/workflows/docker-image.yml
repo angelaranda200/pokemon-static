@@ -3,11 +3,12 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - '../../package-lock.json'
+   
     
   pull_request:
     branches: [ "main" ]
+    paths:
+     - '../../package-lock.json'
     
 
 jobs:
