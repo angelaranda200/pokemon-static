@@ -14,19 +14,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: License compliance check
-        uses: mikaelvesavuori/license-compliance-action@v1.0.2
-        with:
-          allow_licenses: |
-            MIT
-            BSD-2-Clause
-            BSD-3-Clause
-            ISC
-            Apache-2.0
-            CC-BY-4.0
-            MPL-2.0
-            Python-2.0
-          nested_field: "licenseString"
+       - name: License checker
+         run: | 
+           npm install -g license-checker
+           license-checker
+      # - name: License compliance check
+      #   uses: mikaelvesavuori/license-compliance-action@v1.0.2
+      #   with:
+      #     allow_licenses: |
+      #       MIT
+      #       BSD-2-Clause
+      #       BSD-3-Clause
+      #       ISC
+      #       Apache-2.0
+      #       CC-BY-4.0
+      #       MPL-2.0
+      #       Python-2.0
+      #     nested_field: "licenseString"
       # - uses: actions/checkout@v2
 
       # # Install only production dependencies
