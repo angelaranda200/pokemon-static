@@ -27,7 +27,7 @@ jobs:
           path: /home/runner/work/pokemon-static/pokemon-static
 
       - name: Print the contents of the directory
-        run: ls ${{ env.GITHUB_WORKSPACE }}
+        run: ls ${{ env.GITHUB_WORKSPACE }}/package-lock.json
       # - name: License checker
        #   run: | 
        #     npm install -g license-checker
