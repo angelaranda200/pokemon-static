@@ -45,30 +45,37 @@ jobs:
       #       MPL-2.0
       #       Python-2.0
       #     nested_field: "licenseString"
+
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Check for Licenses
+        uses: docker://cdssnc/node-license-checker-github-action
+        with:
+          args: "/home/runner/work/pokemon-static/pokemon-static --onlyAllow 'MIT'"
       
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
 
       # Install only production dependencies
       # if you don't care about licenses of devDependencies
       # E.g. GPL license is allowed in devDependencies
-      - run: | 
-           npm i --frozen-lockfile
-           ls ${{ env.GITHUB_WORKSPACE }}
+      # - run: | 
+      #      npm i --frozen-lockfile
+      #      ls ${{ env.GITHUB_WORKSPACE }}
 
-       #Use main branch or a specific version (e.g. @v0.2.0)
-      - uses: daynin/nodejs-license-checker@v0.1.5
-        with:
-          exclude-private-packages: true
-          allow-only:  |
-            MIT
-            BSD-2-Clause
-            BSD-3-Clause
-            ISC
-            Apache-2.0
-            CC-BY-4.0
-            MPL-2.0
-            Python-2.0
-          paths: "/home/runner/work/pokemon-static/pokemon-static"
+      #  #Use main branch or a specific version (e.g. @v0.2.0)
+      # - uses: daynin/nodejs-license-checker@v0.1.5
+      #   with:
+      #     exclude-private-packages: true
+      #     allow-only:  |
+      #       MIT
+      #       BSD-2-Clause
+      #       BSD-3-Clause
+      #       ISC
+      #       Apache-2.0
+      #       CC-BY-4.0
+      #       MPL-2.0
+      #       Python-2.0
+      #     paths: "/home/runner/work/pokemon-static/pokemon-static"
 
   #build:
 
