@@ -31,7 +31,7 @@ jobs:
       #       MPL-2.0
       #       Python-2.0
       #     nested_field: "licenseString"
-      # - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       # Install only production dependencies
       # if you don't care about licenses of devDependencies
