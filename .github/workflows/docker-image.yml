@@ -29,6 +29,7 @@ jobs:
             MIT
             BSD-3-Clause
             ISC
+          paths: 'package-lock.json'
 
   #build:
 
