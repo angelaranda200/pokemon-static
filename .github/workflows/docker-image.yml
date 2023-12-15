@@ -21,7 +21,7 @@ jobs:
           echo $GITHUB_WORKSPACE
 
      
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           path: /home/runner/work/pokemon-static/pokemon-static
 
@@ -45,7 +45,7 @@ jobs:
       #       Python-2.0
       #     nested_field: "licenseString"
       
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v3
 
       # Install only production dependencies
       # if you don't care about licenses of devDependencies
@@ -65,7 +65,7 @@ jobs:
             CC-BY-4.0
             MPL-2.0
             Python-2.0
-          paths: "${{ env.GITHUB_WORKSPACE }}"
+          paths: "/home/runner/work/pokemon-static/pokemon-static/package-lock.json"
 
   #build:
 
