@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-       - name: License checker
-         run: | 
-           npm install -g license-checker
-           license-checker
+       # - name: License checker
+       #   run: | 
+       #     npm install -g license-checker
+       #     license-checker
       # - name: License compliance check
       #   uses: mikaelvesavuori/license-compliance-action@v1.0.2
       #   with:
@@ -33,20 +33,20 @@ jobs:
       #     nested_field: "licenseString"
       # - uses: actions/checkout@v2
 
-      # # Install only production dependencies
-      # # if you don't care about licenses of devDependencies
-      # # E.g. GPL license is allowed in devDependencies
-      # - run: npm i --frozen-lockfile 
+      # Install only production dependencies
+      # if you don't care about licenses of devDependencies
+      # E.g. GPL license is allowed in devDependencies
+      - run: npm i --frozen-lockfile 
 
-      #  #Use main branch or a specific version (e.g. @v0.2.0)
-      # - uses: daynin/nodejs-license-checker@main
-      #   with:
-      #     exclude-private-packages: true
-      #     allow-only:  |
-      #       MIT
-      #       BSD-3-Clause
-      #       ISC
-      #     paths: package-lock.json
+       #Use main branch or a specific version (e.g. @v0.2.0)
+      - uses: daynin/nodejs-license-checker@main
+        with:
+          exclude-private-packages: true
+          # allow-only:  |
+          #   MIT
+          #   BSD-3-Clause
+          #   ISC
+          paths: package-lock.json
 
   #build:
 
