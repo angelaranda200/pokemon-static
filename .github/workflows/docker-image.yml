@@ -51,7 +51,7 @@ jobs:
             CC-BY-4.0
             MPL-2.0
             Python-2.0
-          paths: "../../package-lock.json"
+          paths: "/package-lock.json"
 
   #build:
 
