@@ -16,10 +16,10 @@ jobs:
     steps:
     # - name: Check if package-lock.json is in the specified directory
     #   run: ls "${{ env.GITHUB_WORKSPACE }}"
-      # - uses: actions/checkout@v3
-      # - run: |
-      #     echo ${{ github.workspace }}
-      #     echo $GITHUB_WORKSPACE
+      - uses: actions/checkout@v3
+      - run: |
+          echo ${{ github.workspace }}
+          echo $GITHUB_WORKSPACE
 
      
       - uses: actions/checkout@v3
