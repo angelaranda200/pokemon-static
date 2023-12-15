@@ -22,7 +22,7 @@ jobs:
       - name: Check licenses
         uses: hearthsim/action-npm-permissive-license-checker@v2
         with:
-          production-only: true
+          production-only: false
           exclude-private-packages: false
       # - name: Use Node.js 16.x
       #   uses: actions/setup-node@v3.8.1
