@@ -15,18 +15,18 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v3
-      - run: |
-          echo ${{ github.workspace }}
-          echo $GITHUB_WORKSPACE
+      # - uses: actions/checkout@v3
+      # - run: |
+      #     echo ${{ github.workspace }}
+      #     echo $GITHUB_WORKSPACE
 
      
-      - uses: actions/checkout@v3
-        with:
-          path: /home/runner/work/pokemon-static/pokemon-static
+      # - uses: actions/checkout@v3
+      #   with:
+      #     path: /home/runner/work/pokemon-static/pokemon-static
 
-      - name: Print the contents of the directory
-        run: ls ${{ env.GITHUB_WORKSPACE }}
+      # - name: Print the contents of the directory
+      #   run: ls ${{ env.GITHUB_WORKSPACE }}
       # - name: License checker
        #   run: | 
        #     npm install -g license-checker
@@ -50,7 +50,7 @@ jobs:
       # Install only production dependencies
       # if you don't care about licenses of devDependencies
       # E.g. GPL license is allowed in devDependencies
-      - run: npm i  
+      - run: npm i --frozen-lockfile
 
        #Use main branch or a specific version (e.g. @v0.2.0)
       - uses: daynin/nodejs-license-checker@v0.1.5
