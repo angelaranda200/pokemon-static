@@ -10,7 +10,7 @@ on:
     
 jobs:
   licenses:
-    name: Check paths
+    name: Check license
     runs-on: ubuntu-latest
 
     steps:
@@ -45,27 +45,27 @@ jobs:
       #       Python-2.0
       #     nested_field: "licenseString"
       
-      # - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       # Install only production dependencies
       # if you don't care about licenses of devDependencies
       # E.g. GPL license is allowed in devDependencies
-      # - run: npm i  
+      - run: npm i  
 
        #Use main branch or a specific version (e.g. @v0.2.0)
-      # - uses: daynin/nodejs-license-checker@v0.1.5
-      #   with:
-          # exclude-private-packages: true
-          # allow-only:  |
-          #   MIT
-          #   BSD-2-Clause
-          #   BSD-3-Clause
-          #   ISC
-          #   Apache-2.0
-          #   CC-BY-4.0
-          #   MPL-2.0
-          #   Python-2.0
-          # paths: "./package-lock.json"
+      - uses: daynin/nodejs-license-checker@v0.1.5
+        with:
+          exclude-private-packages: true
+          allow-only:  |
+            MIT
+            BSD-2-Clause
+            BSD-3-Clause
+            ISC
+            Apache-2.0
+            CC-BY-4.0
+            MPL-2.0
+            Python-2.0
+          paths: "${{ env.GITHUB_WORKSPACE }}/package-lock.json"
 
   #build:
 
