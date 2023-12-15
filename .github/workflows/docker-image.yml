@@ -10,11 +10,16 @@ on:
     
 jobs:
   licenses:
-    name: Check licenses
+    name: Check paths
     runs-on: ubuntu-latest
 
     steps:
-       # - name: License checker
+
+      - uses: actions/checkout@v3
+      - run: |
+          echo ${{ github.workspace }}
+          echo $GITHUB_WORKSPACE
+      # - name: License checker
        #   run: | 
        #     npm install -g license-checker
        #     license-checker
@@ -31,27 +36,28 @@ jobs:
       #       MPL-2.0
       #       Python-2.0
       #     nested_field: "licenseString"
-      - uses: actions/checkout@v4
+      
+      # - uses: actions/checkout@v4
 
       # Install only production dependencies
       # if you don't care about licenses of devDependencies
       # E.g. GPL license is allowed in devDependencies
-      - run: npm i  
+      # - run: npm i  
 
        #Use main branch or a specific version (e.g. @v0.2.0)
-      - uses: daynin/nodejs-license-checker@v0.1.5
-        with:
+      # - uses: daynin/nodejs-license-checker@v0.1.5
+      #   with:
           # exclude-private-packages: true
-          allow-only:  |
-            MIT
-            BSD-2-Clause
-            BSD-3-Clause
-            ISC
-            Apache-2.0
-            CC-BY-4.0
-            MPL-2.0
-            Python-2.0
-          paths: "./package-lock.json"
+          # allow-only:  |
+          #   MIT
+          #   BSD-2-Clause
+          #   BSD-3-Clause
+          #   ISC
+          #   Apache-2.0
+          #   CC-BY-4.0
+          #   MPL-2.0
+          #   Python-2.0
+          # paths: "./package-lock.json"
 
   #build:
 
