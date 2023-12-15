@@ -65,7 +65,7 @@ jobs:
             CC-BY-4.0
             MPL-2.0
             Python-2.0
-          paths: "/home/runner/work/pokemon-static/pokemon-static/package-lock.json"
+          paths: "./package-lock.json"
 
   #build:
 
