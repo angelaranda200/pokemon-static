@@ -65,7 +65,7 @@ jobs:
             CC-BY-4.0
             MPL-2.0
             Python-2.0
-          paths: "${{ env.GITHUB_WORKSPACE }}/package-lock.json"
+          paths: "${{ env.GITHUB_WORKSPACE }}"
 
   #build:
 
