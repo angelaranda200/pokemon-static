@@ -3,6 +3,8 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
+    paths:
+      - '../../package-lock.json'
     
   pull_request:
     branches: [ "main" ]
@@ -51,7 +53,7 @@ jobs:
             CC-BY-4.0
             MPL-2.0
             Python-2.0
-          paths: "../../package.json"
+          paths: "../../package-lock.json"
 
   #build:
 
