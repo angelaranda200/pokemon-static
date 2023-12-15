@@ -14,21 +14,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3.8.1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: '18'
+      - run: npm install
+      - name: Check licenses
+        uses: hearthsim/action-npm-permissive-license-checker@v2
+        with:
+          production-only: true
+          exclude-private-packages: true
+      # - name: Use Node.js 16.x
+      #   uses: actions/setup-node@v3.8.1
+      #   with:
+      #     node-version: 16.x
     # - name: Check if package-lock.json is in the specified directory
     #   run: ls "${{ env.GITHUB_WORKSPACE }}"
-      - uses: actions/checkout@v3
-      - run: |
-          echo ${{ github.workspace }}
-          echo $GITHUB_WORKSPACE
+      # - uses: actions/checkout@v3
+      # - run: |
+      #     echo ${{ github.workspace }}
+      #     echo $GITHUB_WORKSPACE
 
      
-      - uses: actions/checkout@v3
-        with:
-          path: /home/runner/work/pokemon-static/pokemon-static
+      # - uses: actions/checkout@v3
+      #   with:
+      #     path: /home/runner/work/pokemon-static/pokemon-static
 
       # - name: Print the contents of the directory
       #   run: ls ${{ env.GITHUB_WORKSPACE }}
@@ -50,29 +60,29 @@ jobs:
       #       Python-2.0
       #     nested_field: "licenseString"
       
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
 
       # Install only production dependencies
       # if you don't care about licenses of devDependencies
       # E.g. GPL license is allowed in devDependencies
-      - run: | 
-           npm i --frozen-lockfile
-           ls ${{ env.GITHUB_WORKSPACE }}
+      # - run: | 
+      #      npm i --frozen-lockfile
+      #      ls ${{ env.GITHUB_WORKSPACE }}
 
       #  #Use main branch or a specific version (e.g. @v0.2.0)
-      - uses: daynin/nodejs-license-checker@v0.2.0
-        with:
-          exclude-private-packages: true
-          allow-only:  |
-            MIT
-            BSD-2-Clause
-            BSD-3-Clause
-            ISC
-            Apache-2.0
-            CC-BY-4.0
-            MPL-2.0
-            Python-2.0
-          paths: "/home/runner/work/pokemon-static/pokemon-static"
+      # - uses: daynin/nodejs-license-checker@v0.2.0
+      #   with:
+      #     exclude-private-packages: true
+      #     allow-only:  |
+      #       MIT
+      #       BSD-2-Clause
+      #       BSD-3-Clause
+      #       ISC
+      #       Apache-2.0
+      #       CC-BY-4.0
+      #       MPL-2.0
+      #       Python-2.0
+      #     paths: "/home/runner/work/pokemon-static/pokemon-static"
 
   #build:
 
