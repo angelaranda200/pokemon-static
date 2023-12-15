@@ -36,7 +36,7 @@ jobs:
       # Install only production dependencies
       # if you don't care about licenses of devDependencies
       # E.g. GPL license is allowed in devDependencies
-      - run: npm i --frozen-lockfile 
+      - run: npm i  
 
        #Use main branch or a specific version (e.g. @v0.2.0)
       - uses: daynin/nodejs-license-checker@v0.1.5
